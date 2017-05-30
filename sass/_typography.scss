@@ -1,0 +1,26 @@
+//************************************************************************************
+// TYPOGRAPHY.scss 
+// 
+// For fonts, text styles, headings etc.
+//************************************************************************************
+
+// Base
+body {
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 700;
+}
+
+// ABLIS Brand
+.navbar-brand {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.lead {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}

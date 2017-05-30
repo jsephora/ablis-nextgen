@@ -1,0 +1,13 @@
+//****************************************************************************************************//
+// MIXINS.scss 
+// 
+// Mah mixins come git some o' mah mixins
+//****************************************************************************************************//
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}

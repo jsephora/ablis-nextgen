@@ -1,0 +1,30 @@
+//****************************************************************************************************//
+// LAYOUT.scss
+// 
+// For styles related to the base layout and skeletal structure of the site. 
+//****************************************************************************************************//
+// Fixed Navbar on every screen with ABLIS branding
+.bg-ablis {
+    background-color: $ablis-blue;
+}
+
+//Heading Section
+.mt-3 {
+    padding-top: 1.250rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    @media (min-width: 641px) {
+        padding-top: 3rem;
+    }
+}
+
+// Service Details Section
+#serviceDetailsPanel {
+    height: 99%;
+    width: 100%;
+    object {
+        width: 100%;
+        min-height: 100%;
+        overflow-y: scroll;
+    }
+}

@@ -1,0 +1,56 @@
+// ----- Variables is where reusable attributes are declared, such as colours and font cascades.
+// ------------------------------------------------------------------------------------------------------
+
+
+// Widths
+// ------------------------------------------------------------------------------------------------------
+
+$content-max-width: 1220px;
+$break-small: 480px;
+$break-medium: 768px;
+$break-large: 960px;
+$break-wide: 1220px;
+
+$banner-break: 640px;
+
+
+// Padding and radius
+// ------------------------------------------------------------------------------------------------------
+
+$progress-bar-radius: 6px;
+$small-border-radius: 3px;
+$medium-border-radius: 6px;
+$large-border-radius: 10px;
+$site-padding: 3%;
+
+
+// Typography
+// ------------------------------------------------------------------------------------------------------
+
+$font-light: Arial;
+
+$font-size-base: 16px;
+$font-size-default: 1rem;
+$font-size-small: 1.05rem;
+$font-size-medium: 1.1rem;
+$font-size-large: 1.15rem;
+$font-size-wide: 1.2rem;
+
+$normal: 100%;
+$smaller: 90%;
+$smallest: 80%;
+$larger: 110%;
+$largest: 130%;
+$line-height: 1.4;
+
+
+// Mixins
+// ------------------------------------------------------------------------------------------------------
+
+@mixin transition {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
