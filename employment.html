@@ -1,0 +1,111 @@
+<div id="employment">
+    <h6>Employing Staff (5 Results)</h6>
+
+    <div class="serviceTile">
+        <button id="120" class="servicePreview">
+            <h3 class="serviceName">Employer Requirements - Superannuation Guarantee</h3>
+            <meta-label>Licence | Employing Staff or Contractors</meta-label>
+            <shortdesc>
+                <p>If you are an employer you have an obligation to pay superannuation contributions on behalf of all your eligible employees, in addition to their wages and salaries.</p>
+            </shortdesc>
+        </button>
+
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+    </div>
+
+    <div class="serviceTile">
+        <button id="348" class="servicePreview">
+            <h3 class="serviceName">Fair Work Information Statement</h3>
+            <meta-label>Licence | Employing Staff or Contractors</meta-label>
+            <shortdesc>
+                <p>All employers covered by the national workplace relations system have an obligation to give each new employee a Fair Work Information Statement before, or as soon as possible after, the new staff member starts employment.</p>
+            </shortdesc>
+        </button>
+
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+
+    </div>
+
+    <div class="serviceTile">
+        <button id="31420" class="servicePreview">
+            <h3 class="serviceName">National Employment Standards</h3>
+            <meta-label>Code of Practice | Employing Staff or Contractors</meta-label>
+            <shortdesc>
+                <p>You will be required to comply with these National Employment Standards (NES) if you are an employer.</p>
+            </shortdesc>
+        </button>
+
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+
+    </div>
+
+    <div class="serviceTile">
+        <button id="38735" class="servicePreview">
+            <h3 class="serviceName">Privacy (Tax File Number) Rule 2015</h3>
+            <meta-label>Code of Practice | Employing Staff or Contractors</meta-label>
+            <shortdesc>
+                <p>You must comply with this rule if you intend to collect individual's tax file number (TFN) information. </p>
+            </shortdesc>
+        </button>
+
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+
+    </div>
+    
+    <div class="serviceTile">
+        <button id="38502" class="servicePreview">
+            <h3 class="serviceName">Small Business Fair Dismissal Code</h3>
+            <meta-label>Code of Practice | Employing Staff or Contractors</meta-label>
+            <shortdesc>
+                <p>You will be required to comply with this code if you operate a small business. A small business is defined as any business with fewer than 15 employees.</p>
+            </shortdesc>
+        </button>
+
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+
+    </div>
+    
+</div>
+
+<script>
+$(document).ready(function () {    
+//--- Add/Remove to pack
+    $('.add').click(function() {
+
+        var $h3 = $(event.target).closest('.serviceTile').find('h3');
+        var $title = $($h3).text();
+        var delButton = "<button class='delete'>remove</button>";
+
+        $('ul.sidebar-nav-right').append('<li>' + $title + delButton + '</li>');
+//        $('.add').prop('disabled', true);
+
+    });
+
+    $(document).on("click", ".delete", function() {
+        $(this).parent('li').remove();
+        $(this).remove();
+
+    });
+    
+        //--- Loading Service Details ---//
+
+    $('button').click(function (e) {
+
+        var buttonId = this.id;
+        var objectFileName = '<object data="' + buttonId + '.html" />';
+
+        e.preventDefault();
+        $('#serviceDetailsPanel').html(objectFileName);
+    });
+});
+</script>
