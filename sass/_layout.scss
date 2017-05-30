@@ -18,8 +18,53 @@
     }
 }
 
+// Search Results
+.serviceTile {
+    border-bottom: 1px dotted $hz;
+    padding: 20px 0;
+    .servicePreview {
+        text-align: left;
+        background: none;
+        border: 0;
+        padding: 0;
+    }
+    .serviceName {
+        color: $dark-blue;
+        font-family: $font-light;
+        font-weight: 400;
+        font-size: 1.125rem;
+    }
+    meta-label {
+        color: $green;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    p {
+        color: $greytext;
+        font-size: 14px;
+    }
+    .sub-actions {
+        a {
+            font-size: 14px;
+            text-decoration: underline;
+            &:hover {
+                color: white;
+                background-color: black;
+                text-decoration: none;
+                padding: 4px;
+            }
+        }
+    }
+}
+
+.results-controlbar {
+    float: right;
+}
+
+
 // Service Details Section
 #serviceDetailsPanel {
+    font-family: $font-light;
     height: 99%;
     width: 100%;
     object {
