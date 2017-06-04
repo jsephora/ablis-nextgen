@@ -351,12 +351,12 @@ button {
 .bg-ablis {
   background-color: #254f90; }
 
-.mt-3 {
+.mainheading {
   padding-top: 1.250rem;
   margin-bottom: 2rem;
   text-align: center; }
   @media (min-width: 641px) {
-    .mt-3 {
+    .mainheading {
       padding-top: 3rem; } }
 
 .serviceTile {
@@ -399,6 +399,22 @@ button {
     width: 100%;
     min-height: 100%;
     overflow-y: scroll; }
+
+body#results {
+  margin: 0; }
+
+#results .container-fluid {
+  height: 100%;
+  flex-direction: column; }
+
+#results .container-fluid, #results .content {
+  display: flex; }
+
+#results .content, #results .content div {
+  flex: 1; }
+
+#results .content div {
+  overflow: scroll; }
 
 .alpha-label .phase-tag {
   display: -moz-inline-stack;

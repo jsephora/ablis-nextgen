@@ -4,42 +4,30 @@
 // Slide out sidebar styling for right side
 //****************************************************************************************************//
 
- body {
-    overflow-x: hidden;
- }
-
 /* Toggle Styles */
 
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled-right {
-    padding-right: 350px;
+#content.toggled-right {
+    padding-right: 300px;
 }
 
 #sidebar-wrapper-right {
     z-index: 1000;
     position: fixed;
-    right: 350px;
+    right: 300px;
     width: 0;
     height: 100%;
-    margin-right: -350px;
+    margin-right: -300px;
     overflow-y: auto;
     background: white;
-    border-left: 1px solid $table-lines;
+    border-left: 1px solid $grey-bg;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled-right #sidebar-wrapper-right {
-    width: 250px;
+#content.toggled-right #sidebar-wrapper-right {
+    width: 300px;
 }
 
 #page-content-wrapper {
@@ -48,19 +36,18 @@
     padding: 15px;
 }
 
-#wrapper.toggled-right #page-content-wrapper {
+#content.toggled-right #page-content-wrapper {
     position: absolute;
-    margin-left: -350px;
+    margin-left: -300px;
 }
 
 /* Sidebar Styles */
-
 .sidebar-nav-right {
     position: absolute;
     top: 0;
-    width: 350px;
+    width: 300px;
     margin: 0;
-    padding: 0;
+    padding: 1rem 0;
     list-style: none;
 }
 
@@ -131,20 +118,20 @@ button.delete {
 }
 
 @media(min-width:768px) {
-    #wrapper {
+    #content {
         padding-left: 0;
     }
 
-    #wrapper.toggled-right {
-        padding-right: 350px;
+    #content.toggled-right {
+        padding-right: 300px;
     }
 
     #sidebar-wrapper-right {
         width: 0;
     }
 
-    #wrapper.toggled-right #sidebar-wrapper-right {
-        width: 350px;
+    #content.toggled-right #sidebar-wrapper-right {
+        width: 300px;
         padding: 20px;
     }
 
@@ -153,7 +140,7 @@ button.delete {
         position: relative;
     }
 
-    #wrapper.toggled-right #page-content-wrapper {
+    #content.toggled-right #page-content-wrapper {
         position: relative;
         margin-left: 0;
     }

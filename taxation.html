@@ -1,0 +1,48 @@
+<div id="taxation">
+    <h2>Taxation <span class="resultCount">(1 Result)</span></h2>
+
+    <div class="serviceTile">
+        <button id="56" class="servicePreview">
+            <h3 class="serviceName">Registration as a PAYG Withholder</h3>
+            <meta-label>Licence | AUS | General Taxation Requirements and Registrations</meta-label>
+            <shortdesc>
+                <p>You will require this registration if you have an obligation to collect tax from payments you make to employees and some businesses.</p>
+            </shortdesc>
+        </button>
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+    </div>
+</div>
+
+<script>
+//--- Add/Remove to pack
+    $('.add').click(function() {
+
+        var $h3 = $(event.target).closest('.serviceTile').find('h3');
+        var $title = $($h3).text();
+        var delButton = "<button class='delete'>remove</button>";
+
+        $('ul.sidebar-nav-right').append('<li>' + $title + delButton + '</li>');
+//        $('.add').prop('disabled', true);
+
+    });
+
+    $(document).on("click", ".delete", function() {
+        $(this).parent('li').remove();
+        $(this).remove();
+
+    });
+    
+//--- Loading Service Details ---//
+
+    $('button').click(function (e) {
+
+        var buttonId = this.id;
+        var fileName = buttonId + ".html";
+
+        e.preventDefault();
+        $('#serviceDetailsPanel').load(fileName);
+        
+    });
+</script>

@@ -1,5 +1,18 @@
-<div id="alcohol">
-    <h2>Selling Alcohol <span class="resultCount">(4 Results)</span></h2>
+<div id="beforeYouStart">
+    <h2>Before you start <span class="resultCount">(5 Results)</span></h2>
+
+    <div class="serviceTile">
+        <button id="23993" class="servicePreview">
+            <h3 class="serviceName">BYO Permit - Victoria</h3>
+            <meta-label>Licence | VIC | Liquor and Alcohol Products and Services</meta-label>
+            <shortdesc>
+                <p>You will require this permit if you operate a restaurant, club or party bus and you intend to allow customers to consume their own alcohol on the premises.</p>
+            </shortdesc>
+        </button>
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+    </div>
 
     <div class="serviceTile">
         <button id="23998" class="servicePreview">
@@ -9,7 +22,6 @@
                 <p>You will require this licence if you operate a business or club that supplies alcohol for consumption on the premises.</p>
             </shortdesc>
         </button>
-
         <div class="sub-actions">
             <a href="#" class="add">Add to pack</a>
         </div>
@@ -23,26 +35,9 @@
                 <p>You will require this licence if you operate a business that serves food, such as a restaurant or cafe, and you intend to serve alcohol.</p>
             </shortdesc>
         </button>
-
         <div class="sub-actions">
             <a href="#" class="add">Add to pack</a>
         </div>
-
-    </div>
-
-    <div class="serviceTile">
-        <button id="23993" class="servicePreview">
-            <h3 class="serviceName">BYO Permit - Victoria</h3>
-            <meta-label>Licence | VIC | Liquor and Alcohol Products and Services</meta-label>
-            <shortdesc>
-                <p>You will require this permit if you operate a restaurant, club or party bus and you intend to allow customers to consume their own alcohol on the premises.</p>
-            </shortdesc>
-        </button>
-
-        <div class="sub-actions">
-            <a href="#" class="add">Add to pack</a>
-        </div>
-
     </div>
 
     <div class="serviceTile">
@@ -53,7 +48,6 @@
                 <p>You will require this licence if you operate a business and you intend to provide alcohol to your customers. This applies to pubs, hotels and holiday resorts, as well as other businesses that supply alcohol to customers.</p>
             </shortdesc>
         </button>
-
         <div class="sub-actions">
             <a href="#" class="add">Add to pack</a>
         </div>
@@ -62,7 +56,7 @@
 </div>
 
 <script>
-//--- Add/Remove to pack
+    //--- Add/Remove to pack
     $('.add').click(function() {
 
         var $h3 = $(event.target).closest('.serviceTile').find('h3');
@@ -70,7 +64,7 @@
         var delButton = "<button class='delete'>remove</button>";
 
         $('ul.sidebar-nav-right').append('<li>' + $title + delButton + '</li>');
-//        $('.add').prop('disabled', true);
+        //        $('.add').prop('disabled', true);
 
     });
 
@@ -79,16 +73,16 @@
         $(this).remove();
 
     });
-    
-//--- Loading Service Details ---//
 
-    $('button').click(function (e) {
+    //--- Loading Service Details ---//
+
+    $('button').click(function(e) {
 
         var buttonId = this.id;
         var fileName = buttonId + ".html";
 
         e.preventDefault();
         $('#serviceDetailsPanel').load(fileName);
-        
+
     });
 </script>

@@ -1,13 +1,15 @@
 /* Overlay style */
 .overlay {
 	position: absolute;
-	width: 100%;
+	width: 50%;
 	height: 100%;
-	top: 0;
-	left: 0;
+	top: 3rem;
+	left: 50%;
     background: $grey-bg;
-    padding: 4rem;
-//	background: rgba(153,204,51,0.9);
+    padding: 3rem;
+    margin-top: -3rem;
+    z-index: 2;
+    overflow: auto;
 }
 
 /* Overlay closing cross */
@@ -114,4 +116,13 @@ section button {
 	padding: 15px 30px;
 	outline: none;
 	background: #85b91e;
+}
+
+// Refinement (Question and Answer) Styling --------
+.longfield {
+    margin-bottom: 2rem;
+}
+legend.with-tooltip {
+    font-size: 1.125rem;
+    font-weight: 400;
 }

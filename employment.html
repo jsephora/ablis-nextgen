@@ -1,5 +1,5 @@
 <div id="employment">
-    <h6>Employing Staff (5 Results)</h6>
+    <h2>Employing Staff <span class="resultCount">(7 Results)</span></h2>
 
     <div class="serviceTile">
         <button id="120" class="servicePreview">
@@ -59,7 +59,7 @@
         </div>
 
     </div>
-    
+
     <div class="serviceTile">
         <button id="38502" class="servicePreview">
             <h3 class="serviceName">Small Business Fair Dismissal Code</h3>
@@ -74,11 +74,38 @@
         </div>
 
     </div>
+
+    <div class="serviceTile">
+        <button id="24410" class="servicePreview">
+            <h3 class="serviceName">National Police Certificate</h3>
+            <meta-label>Licence | VIC | Employing Staff or Contractors</meta-label>
+            <shortdesc>
+                <p>A National Police Certificate is a full record of your criminal history. It displays all releasable court outcomes (sentences, convictions and findings of guilt) from all Australian States and Territories.</p>
+            </shortdesc>
+        </button>
+
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+    </div>
     
+    <div class="serviceTile">
+        <button id="24633" class="servicePreview">
+            <h3 class="serviceName">Application for WorkSafe Insurance</h3>
+            <meta-label>Licence | VIC | Employing Staff or Contractors</meta-label>
+            <shortdesc>
+                <p>All Victorian employers that pay more than $7,500 in wages per year, or employ apprentices or trainees are required to register with WorkSafe.</p>
+            </shortdesc>
+        </button>
+
+        <div class="sub-actions">
+            <a href="#" class="add">Add to pack</a>
+        </div>
+    </div>
+
 </div>
 
 <script>
-$(document).ready(function () {    
 //--- Add/Remove to pack
     $('.add').click(function() {
 
@@ -97,15 +124,15 @@ $(document).ready(function () {
 
     });
     
-        //--- Loading Service Details ---//
+//--- Loading Service Details ---//
 
     $('button').click(function (e) {
 
         var buttonId = this.id;
-        var objectFileName = '<object data="' + buttonId + '.html" />';
+        var fileName = buttonId + ".html";
 
         e.preventDefault();
-        $('#serviceDetailsPanel').html(objectFileName);
+        $('#serviceDetailsPanel').load(fileName);
+        
     });
-});
 </script>

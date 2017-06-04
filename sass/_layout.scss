@@ -1,15 +1,12 @@
-//****************************************************************************************************//
+//**************************************************************************
 // LAYOUT.scss
 // 
 // For styles related to the base layout and skeletal structure of the site. 
-//****************************************************************************************************//
-// Fixed Navbar on every screen with ABLIS branding
-.bg-ablis {
-    background-color: $ablis-blue;
-}
+//**************************************************************************
 
-//Heading Section
-.mt-3 {
+
+// Heading Section
+.mainheading {
     padding-top: 1.250rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -17,16 +14,50 @@
         padding-top: 3rem;
     }
 }
+.lead {
+    
+}
 
 // Search Results
+#searchResultsPanel {
+    padding: 1rem;
+    h2 {
+        color: $greytext;
+        font-size: 168%;
+        font-weight: 400;
+        margin-bottom: 1.250rem;
+        line-height: $line-height;
+        float: left;
+        clear: both;
+        .resultCount {
+            font-size: 60%;
+            font-weight: 100;
+        }
+    }
+}
 .serviceTile {
     border-bottom: 1px dotted $hz;
     padding: 20px 0;
+    h3 {
+        &:hover, &:active, &:focus {
+//            background: $grey-bg;
+            text-decoration: underline;
+//            margin: -16px -20px 0 -20px;
+//            padding: 16px 20px 0 20px;
+            cursor: pointer;
+        }
+    }
     .servicePreview {
         text-align: left;
         background: none;
         border: 0;
         padding: 0;
+        &:focus, &:active {
+            margin: -16px -20px 0 -20px;
+            padding: 16px 20px 0 20px;
+            outline: none;
+            background-color: aliceblue;
+        }
     }
     .serviceName {
         color: $dark-blue;
@@ -42,8 +73,11 @@
     p {
         color: $greytext;
         font-size: 14px;
+        margin-top: 4px;
+        line-height: 1.6;
     }
     .sub-actions {
+        text-align: right;
         a {
             font-size: 14px;
             text-decoration: underline;
@@ -59,17 +93,95 @@
 
 .results-controlbar {
     float: right;
+    clear: both;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    a {
+        text-decoration: underline;
+        margin-right: 12px;
+        &:hover {
+            color: white;
+            background-color: black;
+            text-decoration: none;
+        }
+    }
 }
 
 
 // Service Details Section
 #serviceDetailsPanel {
-    font-family: $font-light;
-    height: 99%;
-    width: 100%;
-    object {
-        width: 100%;
-        min-height: 100%;
-        overflow-y: scroll;
+    margin-top: 3rem;
+}
+#serviceDetails {
+    padding: 2rem;
+    h1 {
+        font-size: 1.750rem;
+        margin: 0 0 1.25rem 0;
+        line-height: 1.4;
+    }
+    h2 {
+        font-size: 1.250rem;
+        color: $ablis-blue;
+    }
+    h3 {
+        font-size: 1.125rem;
+        color: $ablis-blue;
     }
 }
+
+// Independently scrolling columns
+/*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
+.top {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 1px solid $grey-bg;
+    font-size: 3rem;
+    position: relative;
+    z-index: 10;
+    height: 230px;
+    padding-top: 52px;
+}
+/*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
+#content {
+    display: flex;
+    overflow: hidden;
+    height: calc(100vh - 230px);
+    position: relative;
+    width: 100%;
+}
+/*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
+WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
+*/
+#sidebar-wrapper-left,
+.middle-left,
+.middle-right,
+#sidebar-wrapper-right {
+    overflow: auto;
+    height: auto;
+    min-height: 100%;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+/*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
+#sidebar-wrapper-left::-webkit-scrollbar,
+.middle-left::-webkit-scrollbar,
+.middle-right::-webkit-scrollbar,
+#sidebar-wrapper-right::-webkit-scrollbar {
+    display: none;
+}
+
+.middle-left, .middle-right {
+    flex: 1;
+}
+
+.middle-right {
+    border-left: 1px solid $grey-bg;
+    min-width: 50%;
+}
+.middle-left {
+    max-width: 640px;
+}
+

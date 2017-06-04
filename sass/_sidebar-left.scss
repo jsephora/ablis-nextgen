@@ -4,13 +4,9 @@
 // Slide out sidebar styling for left side
 //****************************************************************************************************//
 
- body {
-    overflow-x: hidden;
- }
-
 /* Toggle Styles */
 
-#wrapper {
+#content {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -18,27 +14,25 @@
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled-left {
-    padding-left: 250px;
+#content.toggled-left {
+    padding-left: 300px;
 }
 
 #sidebar-wrapper-left {
     z-index: 1000;
     position: fixed;
-    left: 250px;
+    left: 300px;
     width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: $ablis-blue;
+    margin-left: -300px;
+    background-color: $ablis-blue;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled-left #sidebar-wrapper-left {
-    width: 250px;
+#content.toggled-left #sidebar-wrapper-left {
+    width: 300px;
 }
 
 #page-content-wrapper {
@@ -47,17 +41,16 @@
     padding: 15px;
 }
 
-#wrapper.toggled-left #page-content-wrapper {
+#content.toggled-left #page-content-wrapper {
     position: absolute;
-    margin-right: -250px;
+    margin-right: -300px;
 }
 
 /* Sidebar Styles */
-
 .sidebar-nav-left {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 300px;
     margin: 0;
     padding: 1rem 0;
     list-style: none;
@@ -113,24 +106,23 @@
 
 #menu-toggle-left {
     text-align: left;
-    margin-bottom: 30px;
 }
 
 @media(min-width:768px) {
-    #wrapper {
+    #content {
         padding-left: 0;
     }
 
-    #wrapper.toggled-left {
-        padding-left: 250px;
+    #content.toggled-left {
+        padding-left: 300px;
     }
 
-    #sidebar-wrapper {
+    #sidebar-wrapper-left {
         width: 0;
     }
 
-    #wrapper.toggled-left #sidebar-wrapper {
-        width: 250px;
+    #content.toggled-left #sidebar-wrapper-left {
+        width: 300px;
     }
 
     #page-content-wrapper {
@@ -138,7 +130,7 @@
         position: relative;
     }
 
-    #wrapper.toggled-left #page-content-wrapper {
+    #content.toggled-left #page-content-wrapper {
         position: relative;
         margin-right: 0;
     }

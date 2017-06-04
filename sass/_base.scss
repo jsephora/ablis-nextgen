@@ -1,0 +1,23 @@
+// BASE.scss
+// Base styles that affect entirety of html and body ------------
+
+
+/*I love me some border-box*/
+* {
+    box-sizing: border-box;
+}
+/*This just stops me getting horizontal scrolling if anything overflows the width*/
+body {
+    overflow-x: hidden;
+}
+/*Just removing default browser padding/margin*/
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+#resultsPage {
+    .container-fluid {
+        padding: 0;
+    }
+}

@@ -7,12 +7,13 @@
 // Base
 html {
     font-family: $font-light;
-    font-size: 16px;
+    font-size: $font-size-base;
 }
 
 body {
     font-family: $font-light;
     font-weight: 300;
+    line-height: $line-height;
 }
 
 strong {

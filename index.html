@@ -19,254 +19,211 @@
     <script src="js/modernizr.custom.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/clean.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body id="resultsPage">
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-ablis">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <a class="navbar-brand" href="#"><strong>ABLIS</strong> | <strong>business</strong>.gov.au</a>
-<!--        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>-->
     </nav>
 
-    <!-- Begin page content -->
-    <div class="container">
-        <div class="alpha-label">
-            <p>
-                <strong class="phase-tag">Alpha</strong>
-                <span>
-          This is a prototype. Complete our quick 5-question survey to <a target="_blank" rel="noopener noreferrer" href="#">help us improve it</a>.
-                </span>
-            </p>
+    <div class="container-fluid">
+        <div class="top">
+            <div class="mainheading">
+                <h1>ABLIS Next Gen Search Results</h1>
+            </div>
+            <p class="lead"><strong>39 Results</strong> found for your business activities and location.</p>
         </div>
     </div>
 
+    <div id="content" class="toggled-left toggled-right">
 
-    <div class="mt-3">
-        <h1>ABLIS Next Gen Search Results</h1>
-    </div>
-    <p class="lead"><strong>39 Results</strong> found for your business activities and location.</p>
+        <!-- Sidebar Left -->
+        <div id="sidebar-wrapper-left">
+            <ul class="sidebar-nav-left">
+                <h5>Categories (39 results total)</h5>
+                <li>
+                    <a id="showAll" class="categoryTitle" href="#showAll" data="allresults.html">All Results (39)</a>
+                </li>
+                <li>
+                    <a id="beforeYouStart" class="categoryTitle" href="#beforeYouStart" data="beforeyoustart.html">Before you start (5)</a>
+                </li>
+                <li>
+                    <a id="sellingFood" class="categoryTitle" href="#sellingFood" data="sellingfood.html">Selling Food (4)</a>
+                </li>
+                <li>
+                    <a id="showAlcohol" class="categoryTitle" href="#showAlcohol" data="alcohol.html">Selling Alcohol (4)</a>
+                </li>
+                <li>
+                    <a id="advertising" class="categoryTitle" href="#advertising" data="advertising.html">Advertising & Signs (3)</a>
+                </li>
+                <li>
+                    <a id="productsAndServices" class="categoryTitle" href="#productsAndServices" data="productsandservices.html">Products & Services (7)</a>
+                </li>
+                <li>
+                    <a id="planningAndBuilding" class="categoryTitle" href="#planningAndBuilding" data="planningandbuilding.html">Planning & Building (10)</a>
+                </li>
+                <li>
+                    <a id="showEmployment" class="categoryTitle" href="#showEmployment" data="employment.html">Employing Staff (7)</a>
+                </li>
+                <li>
+                    <a id="taxation" class="categoryTitle" href="#taxation" data="taxation.html">Taxation (1)</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-    <div id="dashboard" class="container-fluid">
-        <div id="wrapper" class="toggled-left toggled-right">
+        <!-- Left Column -->
+        <div class="middle-left">
+            <a href="#menu-toggle-left" class="sidebar-toggle" id="menu-toggle-left" alt="Show/Hide Categories">></a>
 
-            <!-- Sidebar Left -->
-            <div id="sidebar-wrapper-left">
-                <ul class="sidebar-nav-left">
-                   <h5>Categories (39 results total)</h5>
-                    <li class="sidebar-brand-left">
-                        <a id="showAll" href="#showAll">All Results (39)</a>
-                    </li>
-                    <li>
-                        <a href="#">Before you start (5)</a>
-                    </li>
-                    <li>
-                        <a href="#">Selling Food (4)</a>
-                    </li>
-                    <li>
-                        <a id="showAlcohol" href="#showAlcohol">Selling Alcohol (4)</a>
-                    </li>
-                    <li>
-                        <a href="#">Advertising & Signs (3)</a>
-                    </li>
-                    <li>
-                        <a href="#">Products & Services (7)</a>
-                    </li>
-                    <li>
-                        <a href="#">Planning & Building (10)</a>
-                    </li>
-                    <li>
-                        <a id="showEmployment" href="#showEmployment">Employing Staff (5)</a>
-                    </li>
-                    <li>
-                        <a href="#">Taxation (1)</a>
-                    </li>
-                </ul>
+            <div class="results-controlbar">
+                <a href="#!" id="refineBtn">Refine</a>
+                <a href="#!" id="AddAll">Add all to pack</a>
             </div>
-            <!-- /#sidebar-wrapper -->
 
+            <div id="searchResultsPanel">
 
-            <!-- Sidebar Right -->
-            <div id="sidebar-wrapper-right">
+                <!-- Search Result HTML page goes here -->
 
-                <ul class="sidebar-nav-right">
-                    <h6>Your pack (or whatever)</h6>
-                </ul>
             </div>
-            <!-- /#sidebar-wrapper -->
+        </div>
+        <!-- /.middle-left -->
 
+        <!-- Right Column -->
+        <div class="middle-right">
+            <a href="#menu-toggle-right" class="btn btn-default" id="menu-toggle-right">Show/Hide Pack</a>
 
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <a href="#menu-toggle-left" class="btn btn-default" id="menu-toggle-left">Show/Hide Categories</a>
-                            <div class="results-controlbar">
-                                <a href="#!" id="refineBtn">Refine</a>
-                                <a href="#!" id="AddAll">Add all to pack</a>
-                            </div>
+            <div class="results-controlbar">
+                <a href="#!" id="newTab">Open in a new tab</a>
+                <a href="#!" id="print">Print</a>
+            </div>
+            
+            <!-- open/close -->
+                                <div class="overlay overlay-simplegenie">
+                                    <button type="button" class="overlay-close">Close</button>
+                                    <form>
+                                        <fieldset class="longfield">
+                                            <legend class="with-tooltip">Will you employ staff or contractors?
+                                            </legend>
 
-                            <div id="searchResultsPanel">
-
-                                <!-- Search Result HTML page goes here -->
-
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <a href="#menu-toggle-right" class="btn btn-default" id="menu-toggle-right">Show/Hide Pack</a>
-                            <h6>Service Details</h6>
-
-                            <div id="serviceDetailsPanel">
-
-                                <!-- Service details goes here -->
-
-                            </div>
-
-                            <!-- open/close -->
-                            <div class="overlay overlay-simplegenie">
-                                <button type="button" class="overlay-close">Close</button>
-                                <form>
-                                    <fieldset class="longfield">
-                                        <legend class="with-tooltip">Will you employ staff or contractors? 
-                                        
-<!--                                        <a class="cd-btn help" href="#"><span>Help - Employing staff and contractors</span></a>-->
-                                        </legend>
-
-                                        <div class="radio-toggle">
-                                            <label class="label-left" for="1">
+                                            <div class="radio-toggle">
+                                                <label class="label-left" for="1">
                                 <input type="radio" name="question1" rel="#slidingDiv" id="1" value="Yes">
                                 <span>Yes</span></label>
 
-                                            <label class="label-right" for="0">
+                                                <label class="label-right" for="0">
                                 <input type="radio" name="question1" id="0" value="No"><span>No</span></label>
-                                        </div>
-
-                                        <div id="slidingDiv">
-                                            <p class="question">My business unit will:</p>
-                                            <p class="instruction">(Please select as many that apply)</p>
-                                            <div class="custom-controls">
-                                                <p>
-                                                    <input type="checkbox" id="qa1">
-                                                    <label for="qa1">Have an annual staff payroll exceeding $750,000</label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="qa2">
-                                                    <label for="qa2">Offer benefits to employees beyond their normal wages (e.g. bonuses, fringe benefits)</label>
-                                                </p>
                                             </div>
-                                        </div>
-                                    </fieldset>
 
-                                    <fieldset class="longfield">
-                                        <legend class="with-tooltip">Will you act as a self-insurer for Workers Compensation?</legend>
+                                            <div id="slidingDiv">
+                                                <p class="question">My business unit will:</p>
+                                                <p class="instruction">(Please select as many that apply)</p>
+                                                <div class="custom-controls">
+                                                    <p>
+                                                        <input type="checkbox" id="qa1">
+                                                        <label for="qa1">Have an annual staff payroll exceeding $750,000</label>
+                                                    </p>
+                                                    <p>
+                                                        <input type="checkbox" id="qa2">
+                                                        <label for="qa2">Offer benefits to employees beyond their normal wages (e.g. bonuses, fringe benefits)</label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </fieldset>
 
-                                        <div class="radio-toggle">
-                                            <label class="label-left" for="3">
+                                        <fieldset class="longfield">
+                                            <legend class="with-tooltip">Will you act as a self-insurer for Workers Compensation?</legend>
+
+                                            <div class="radio-toggle">
+                                                <label class="label-left" for="3">
                                 <input type="radio" name="question2" rel="#slidingDiv2" id="3" value="Yes">
                                 <span>Yes</span></label>
 
-                                            <label class="label-right" for="2">
+                                                <label class="label-right" for="2">
                                 <input type="radio" name="question2" id="2" value="No"><span>No</span></label>
-                                        </div>
-
-                                        <div id="slidingDiv2">
-                                            <p class="question">My business will employ staff from:</p>
-                                            <p class="instruction">(Please select as many that apply)</p>
-                                            <div class="custom-controls">
-                                                <p>
-                                                    <input type="checkbox" id="australia" value="Australia only">
-                                                    <label for="australia">Australia</label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="nz" value="New Zealand">
-                                                    <label for="nz">New Zealand</label>
-                                                </p>
-                                                <p>
-                                                    <input type="checkbox" id="overseas" value="overseas">
-                                                    <label for="overseas">Other countries</label>
-                                                </p>
                                             </div>
-                                        </div>
-                                    </fieldset>
 
-                                    <fieldset class="longfield">
-                                        <legend class="with-tooltip">Do you want information on workplace health and safety? 
-<!--                                        <a class="cd-btn help" href="#"><span>Help - Workplace health and safety</span></a>-->
-                                        </legend>
+                                            <div id="slidingDiv2">
+                                                <p class="question">My business will employ staff from:</p>
+                                                <p class="instruction">(Please select as many that apply)</p>
+                                                <div class="custom-controls">
+                                                    <p>
+                                                        <input type="checkbox" id="australia" value="Australia only">
+                                                        <label for="australia">Australia</label>
+                                                    </p>
+                                                    <p>
+                                                        <input type="checkbox" id="nz" value="New Zealand">
+                                                        <label for="nz">New Zealand</label>
+                                                    </p>
+                                                    <p>
+                                                        <input type="checkbox" id="overseas" value="overseas">
+                                                        <label for="overseas">Other countries</label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </fieldset>
 
-                                        <div class="radio-toggle">
-                                            <label class="label-left" for="5">
+                                        <fieldset class="longfield">
+                                            <legend class="with-tooltip">Do you want information on workplace health and safety?
+                                                <!--                                        <a class="cd-btn help" href="#"><span>Help - Workplace health and safety</span></a>-->
+                                            </legend>
+
+                                            <div class="radio-toggle">
+                                                <label class="label-left" for="5">
                                 <input type="radio" name="question3" id="5" value="Yes">
                                 <span>Yes</span></label>
 
-                                            <label class="label-right" for="4">
+                                                <label class="label-right" for="4">
                                 <input type="radio" name="question3" id="4" value="No"><span>No</span></label>
-                                        </div>
+                                            </div>
 
 
-                                    </fieldset>
+                                        </fieldset>
 
-                                    <fieldset class="longfield">
-                                        <legend class="with-tooltip">Will your business provide training to staff or seek assistance with their training? </legend>
+                                        <fieldset class="longfield">
+                                            <legend class="with-tooltip">Will your business provide training to staff or seek assistance with their training? Will your business provide training to staff or seek assistance with their training?</legend>
 
-                                        <div class="radio-toggle">
-                                            <label class="label-left" for="7">
+                                            <div class="radio-toggle">
+                                                <label class="label-left" for="7">
                                 <input type="radio" name="question4" id="7" value="Yes">
                                 <span>Yes</span></label>
 
-                                            <label class="label-right" for="6">
+                                                <label class="label-right" for="6">
                                 <input type="radio" name="question4" id="6" value="No"><span>No</span></label>
-                                        </div>
+                                            </div>
 
-                                    </fieldset>
-                                </form>
-                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+            
 
-                        </div>
-                    </div>
-                </div>
+            <div id="serviceDetailsPanel">
+
+                <!-- Service details goes here -->
+                
             </div>
-            <!-- /#page-content-wrapper -->
 
         </div>
-        <!-- /#wrapper -->
+        <!-- /.middle-right -->
 
+        <!-- Sidebar Right -->
+        <div id="sidebar-wrapper-right">
+
+            <ul class="sidebar-nav-right">
+                <h5>Your pack (or whatever)</h5>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        
     </div>
-
-
-
-
-<!--
-    <footer class="footer">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-        </div>
-    </footer>
--->
-
+    <!-- /main content div -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
