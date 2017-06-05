@@ -37,3 +37,14 @@
         text-decoration: underline;
     }
 }
+
+.clicked {
+    color: $gray-light !important;
+    text-decoration: none !important;
+    &:hover {
+        background-color: none !important;
+        background: none !important;
+        color: $gray-light !important;
+        cursor: not-allowed;
+    }
+}

@@ -1,0 +1,38 @@
+// Sidebar toggle buttons
+// ---------------------------------------------------------
+.sidebar-toggle {
+    height: 40px;
+    width: 40px;
+    display: block;
+    &#menu-toggle-left {
+        background-color: #939393;
+        color: white;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        &:hover {
+            background-color: $ablis-blue;
+        }
+    }
+    &#menu-toggle-right {
+        background-color: #939393;
+        color: white;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        &:hover {
+            background-color: $ablis-blue;
+        }
+    }
+}
+
+#menu-toggle-right {
+    text-align: right;
+    i {
+        position: relative;
+        top: 9px;
+        right: 15px;
+        -webkit-transition: all 300ms ease-in 0s;
+        -moz-transition: all 300ms ease-in 0s;
+        -o-transition: all 300ms ease-in 0s;
+        transition: all 300ms ease-in 0s;
+    }
+}

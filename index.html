@@ -15,6 +15,9 @@
 
     <!-- Open Sans Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    
+    <!-- Font Awesome CDN -->
+    <script src="https://use.fontawesome.com/4f83811ce8.js"></script>
 
     <script src="js/modernizr.custom.js"></script>
 
@@ -81,11 +84,11 @@
 
         <!-- Left Column -->
         <div class="middle-left">
-            <a href="#menu-toggle-left" class="sidebar-toggle" id="menu-toggle-left" alt="Show/Hide Categories">></a>
+            <a href="#menu-toggle-left" class="sidebar-toggle" id="menu-toggle-left" title="Filter by category"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
 
-            <div class="results-controlbar">
+            <div id="results-controlbar">
                 <a href="#!" id="refineBtn">Refine</a>
-                <a href="#!" id="AddAll">Add all to pack</a>
+                <a href="#!" id="addAll">Add all to pack</a>
             </div>
 
             <div id="searchResultsPanel">
@@ -98,9 +101,9 @@
 
         <!-- Right Column -->
         <div class="middle-right">
-            <a href="#menu-toggle-right" class="btn btn-default" id="menu-toggle-right">Show/Hide Pack</a>
+            <a href="#menu-toggle-right" class="sidebar-toggle" id="menu-toggle-right" title="Filter by category"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
-            <div class="results-controlbar">
+            <div id="details-controlbar">
                 <a href="#!" id="newTab">Open in a new tab</a>
                 <a href="#!" id="print">Print</a>
             </div>
@@ -217,7 +220,7 @@
         <div id="sidebar-wrapper-right">
 
             <ul class="sidebar-nav-right">
-                <h5>Your pack (or whatever)</h5>
+                <h5>Your pack</h5>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

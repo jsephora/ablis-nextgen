@@ -58,11 +58,14 @@
     margin-bottom: 20px;
     display: inline-flex;
     padding-right: 20px;
+    font-weight: 500;
+    justify-content: flex-end;
 }
 
 .sidebar-nav-right li a {
     display: block;
     text-decoration: none;
+    color: $link;
 }
 
 .sidebar-nav-right li a:hover {
@@ -101,12 +104,13 @@ button.delete {
     color: $link;
     background: transparent;
     border: 0;
-    display: inline-flex;
+    display: inline;
     position: relative;
     right: 0;
     top: 0;
     line-height: 12px;
     height: 20px;
+    text-align: right;
     &:hover {
         background: #000;
         color: white;
