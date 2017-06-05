@@ -16,6 +16,36 @@ body {
 #resultsPage .container-fluid {
   padding: 0; }
 
+.sidebar-toggle {
+  height: 40px;
+  width: 40px;
+  display: block; }
+  .sidebar-toggle#menu-toggle-left {
+    background-color: #939393;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; }
+    .sidebar-toggle#menu-toggle-left:hover {
+      background-color: #254f90; }
+  .sidebar-toggle#menu-toggle-right {
+    background-color: #939393;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; }
+    .sidebar-toggle#menu-toggle-right:hover {
+      background-color: #254f90; }
+
+#menu-toggle-right {
+  text-align: right; }
+  #menu-toggle-right i {
+    position: relative;
+    top: 9px;
+    right: 15px;
+    -webkit-transition: all 300ms ease-in 0s;
+    -moz-transition: all 300ms ease-in 0s;
+    -o-transition: all 300ms ease-in 0s;
+    transition: all 300ms ease-in 0s; }
+
 /* Toggle Styles */
 #content {
   padding-left: 0;
@@ -102,6 +132,14 @@ body {
 
 #menu-toggle-left {
   text-align: left; }
+  #menu-toggle-left i {
+    position: relative;
+    top: 9px;
+    left: 15px;
+    -webkit-transition: all 300ms ease-in 0s;
+    -moz-transition: all 300ms ease-in 0s;
+    -o-transition: all 300ms ease-in 0s;
+    transition: all 300ms ease-in 0s; }
 
 @media (min-width: 768px) {
   #content {
@@ -165,11 +203,14 @@ body {
   color: #1a0dab;
   margin-bottom: 20px;
   display: inline-flex;
-  padding-right: 20px; }
+  padding-right: 20px;
+  font-weight: 500;
+  justify-content: flex-end; }
 
 .sidebar-nav-right li a {
   display: block;
-  text-decoration: none; }
+  text-decoration: none;
+  color: #0f54c3; }
 
 .sidebar-nav-right li a:hover {
   text-decoration: none;
@@ -201,12 +242,13 @@ button.delete {
   color: #0f54c3;
   background: transparent;
   border: 0;
-  display: inline-flex;
+  display: inline;
   position: relative;
   right: 0;
   top: 0;
   line-height: 12px;
-  height: 20px; }
+  height: 20px;
+  text-align: right; }
   button.delete:hover {
     background: #000;
     color: white; }
@@ -304,16 +346,6 @@ legend.with-tooltip {
   font-size: 1.125rem;
   font-weight: 400; }
 
-.sidebar-toggle {
-  height: 40px;
-  width: 40px;
-  display: block; }
-  .sidebar-toggle#menu-toggle-left {
-    background-color: #254f90;
-    color: white;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px; }
-
 .btn {
   background-color: white;
   border: 1px solid #367ab3;
@@ -349,21 +381,6 @@ legend.with-tooltip {
   box-shadow: 0 0 2px 0 rgba(47, 45, 43, 0.75); }
 
 /* The default button is more visually distinctive and should only appear once on the page */
-.btn-default {
-  background: #4f8fe6;
-  background: -moz-linear-gradient(top, #4f8fe6 0%, #367ab3 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #4f8fe6), color-stop(100%, #367ab3));
-  background: -webkit-linear-gradient(top, #4f8fe6 0%, #367ab3 100%);
-  background: -o-linear-gradient(top, #4f8fe6 0%, #367ab3 100%);
-  background: -ms-linear-gradient(top, #4f8fe6 0%, #367ab3 100%);
-  background: linear-gradient(to bottom, #4f8fe6 0%, #367ab3 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f8fe6', endColorstr='#367ab3', GradientType=0);
-  color: white;
-  border: 1px solid #367ab3;
-  font-weight: bold;
-  margin-right: 0;
-  padding: 0.72em 2em; }
-
 fieldset .btn,
 caption .btn,
 .btn-add,
@@ -1234,10 +1251,10 @@ button {
     text-align: left;
     background: none;
     border: 0;
-    padding: 0; }
+    padding: 0 12px; }
     .serviceTile .servicePreview:focus, .serviceTile .servicePreview:active {
-      margin: -16px -20px 0 -20px;
-      padding: 16px 20px 0 20px;
+      margin: -16px -16px 0 -16px;
+      padding: 16px 28px 0 28px;
       outline: none;
       background-color: aliceblue; }
   .serviceTile .serviceName {
@@ -1265,15 +1282,15 @@ button {
         text-decoration: none;
         padding: 4px; }
 
-.results-controlbar {
+#results-controlbar, #details-controlbar {
   float: right;
   clear: both;
   padding: 0.5rem 0;
   margin-bottom: 1rem; }
-  .results-controlbar a {
+  #results-controlbar a, #details-controlbar a {
     text-decoration: underline;
     margin-right: 12px; }
-    .results-controlbar a:hover {
+    #results-controlbar a:hover, #details-controlbar a:hover {
       color: white;
       background-color: black;
       text-decoration: none; }
@@ -1402,3 +1419,12 @@ WebKit inertia scrolling is being added here for any present/future devices that
   #searchTerms a {
     font-size: .875rem;
     text-decoration: underline; }
+
+.clicked {
+  color: #cccccc !important;
+  text-decoration: none !important; }
+  .clicked:hover {
+    background-color: none !important;
+    background: none !important;
+    color: #cccccc !important;
+    cursor: not-allowed; }
