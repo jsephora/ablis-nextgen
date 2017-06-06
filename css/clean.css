@@ -276,15 +276,25 @@ button.delete {
 /* Overlay style */
 .overlay {
   position: absolute;
-  width: 50%;
+  width: 40%;
   height: 100%;
   top: 3rem;
-  left: 50%;
+  left: 44%;
   background: #e4e5e5;
   padding: 3rem;
   margin-top: -3rem;
   z-index: 2;
-  overflow: auto; }
+  overflow: overlay; }
+  .overlay h4 {
+    margin-bottom: 40px; }
+    .overlay h4 span {
+      font-weight: 100;
+      font-size: 90%; }
+  .overlay .radio-toggle {
+    display: inline-flex;
+    margin-bottom: 30px; }
+  .overlay .custom-controls p:focus, .overlay .custom-controls p > input[type=checkbox]:focus ~ label, .overlay .custom-controls p > input[type=checkbox] ~ label:focus {
+    outline: 0; }
 
 /* Overlay closing cross */
 .overlay .overlay-close {

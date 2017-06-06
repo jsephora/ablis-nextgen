@@ -337,6 +337,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/img\/sprite-custom-controls.png": {
+		"ft": 32768,
+		"iS": 6234,
+		"oA": 0,
+		"oAP": "\/img\/sprite-custom-controls.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/index.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -440,6 +451,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/Users\/admin\/Dropbox\/css\/_base.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/_buttons.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/Users\/USDA\/Dropbox\/css\/_buttons.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

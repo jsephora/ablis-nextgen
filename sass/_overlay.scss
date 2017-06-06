@@ -1,31 +1,48 @@
 /* Overlay style */
+
 .overlay {
-	position: absolute;
-	width: 50%;
-	height: 100%;
-	top: 3rem;
-	left: 50%;
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 3rem;
+    left: 44%;
     background: $grey-bg;
     padding: 3rem;
     margin-top: -3rem;
     z-index: 2;
-    overflow: auto;
+    overflow: overlay;
+    h4 {
+        margin-bottom: 40px;
+        span {
+            font-weight: 100;
+            font-size: 90%;
+        }
+    }
+    .radio-toggle {
+        display: inline-flex;
+        margin-bottom: 30px;
+    }
+    .custom-controls p:focus, .custom-controls p > input[type=checkbox]:focus ~ label, .custom-controls p > input[type=checkbox] ~ label:focus {
+        outline: 0;
+    }
 }
 
+
 /* Overlay closing cross */
+
 .overlay .overlay-close {
-	width: 80px;
-	height: 80px;
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	overflow: hidden;
-	border: none;
-	background: url(../img/cross.png) no-repeat center center;
-	text-indent: 200%;
-	color: transparent;
-	outline: none;
-	z-index: 100;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    overflow: hidden;
+    border: none;
+    background: url(../img/cross.png) no-repeat center center;
+    text-indent: 200%;
+    color: transparent;
+    outline: none;
+    z-index: 100;
 }
 
 ///* Menu style */
@@ -73,56 +90,59 @@
 //}
 
 /* Effects */
+
 .overlay-simplegenie {
-	visibility: hidden;
-	-webkit-transform: translateY(60%) scale(0);
-	transform: translateY(60%) scale(0);
-	-webkit-transition: -webkit-transform 0.4s, visibility 0s 0.4s;
-	transition: transform 0.4s, visibility 0s 0.4s;
+    visibility: hidden;
+    -webkit-transform: translateY(60%) scale(0);
+    transform: translateY(60%) scale(0);
+    -webkit-transition: -webkit-transform 0.4s, visibility 0s 0.4s;
+    transition: transform 0.4s, visibility 0s 0.4s;
 }
 
 .overlay-simplegenie.open {
-	visibility: visible;
-	-webkit-transform: translateY(0%) scale(1);
-	transform: translateY(0%) scale(1);
-	-webkit-transition: -webkit-transform 0.4s;
-	transition: transform 0.4s;
+    visibility: visible;
+    -webkit-transform: translateY(0%) scale(1);
+    transform: translateY(0%) scale(1);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
 }
 
 @media screen and (max-height: 30.5em) {
-	.overlay label {
-		height: 70%;
-		font-size: 34px;
-	}
-	.overlay input {
-		min-height: 34px;
-	}
+    .overlay label {
+        height: 70%;
+        font-size: 34px;
+    }
+    .overlay input {
+        min-height: 34px;
+    }
 }
 
 section {
-	padding: 1em 2em 5em;
-	text-align: center;
-	font-size: 1.5em;
+    padding: 1em 2em 5em;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 section p {
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 20px 0;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
 section button {
-	border: none;
-	padding: 15px 30px;
-	outline: none;
-	background: #85b91e;
+    border: none;
+    padding: 15px 30px;
+    outline: none;
+    background: #85b91e;
 }
 
 // Refinement (Question and Answer) Styling --------
 .longfield {
     margin-bottom: 2rem;
 }
+
 legend.with-tooltip {
     font-size: 1.125rem;
     font-weight: 400;
 }
+

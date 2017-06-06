@@ -17,7 +17,7 @@ $(document).ready(function () {
         $("i").toggleClass('fa-chevron-left fa-chevron-right');
     });
 
-    //-- Loading Search Results --//
+    //-- Load Search Results --//
 
     $('.categoryTitle').click(function (e) {
         var categoryHREF = $(this).attr('data');
@@ -27,20 +27,20 @@ $(document).ready(function () {
         
     });
 
-    $('#showAlcohol').click(function (e) {
-        e.preventDefault();
-        $('#searchResultsPanel').load('alcohol.html');
-    });
-
-    $('#showEmployment').click(function (e) {
-        e.preventDefault();
-        $('#searchResultsPanel').load('employment.html');
-    });
-
-    $('#showAll').click(function (e) {
-        e.preventDefault();
-        $('#searchResultsPanel').load('allresults.html');
-    });
+//    $('#showAlcohol').click(function (e) {
+//        e.preventDefault();
+//        $('#searchResultsPanel').load('alcohol.html');
+//    });
+//
+//    $('#showEmployment').click(function (e) {
+//        e.preventDefault();
+//        $('#searchResultsPanel').load('employment.html');
+//    });
+//
+//    $('#showAll').click(function (e) {
+//        e.preventDefault();
+//        $('#searchResultsPanel').load('allresults.html');
+//    });
     
     
 //--- Add all/Remove all to/from pack--//
@@ -64,25 +64,163 @@ $(document).ready(function () {
         added = false;
     });
     
-//--- remove from pack and reactivate 'Add all to pack' --//
+//--- Remove from pack and reactivate 'Add all to pack' --//
     $(document).on("click", ".delete", function() {
         $(this).parent('li').remove();
         $(this).remove();
         added = true;
         $('#addAll').removeClass('clicked');
     });
-    
-
 
     
 //--- Open in New Tab --- //
-//    $('#newTab').click(function() {
+//    $('#newTab').click(function(e) {
 //        
 //        $('#serviceDetailsPanel').load
 //    })
     
     
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
