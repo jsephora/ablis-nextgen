@@ -54,35 +54,3 @@
 
     </div>
 </div>
-
-<script>
-    //--- Add/Remove to pack
-//    $('.add').click(function() {
-//
-//        var $h3 = $(event.target).closest('.serviceTile').find('h3');
-//        var $title = $($h3).text();
-//        var delButton = "<button class='delete'>remove</button>";
-//
-//        $('ul.sidebar-nav-right').append('<li>' + $title + delButton + '</li>');
-//        //        $('.add').prop('disabled', true);
-//
-//    });
-//
-//    $(document).on("click", ".delete", function() {
-//        $(this).parent('li').remove();
-//        $(this).remove();
-//
-//    });
-
-    //--- Loading Service Details ---//
-
-    $('button').click(function(e) {
-
-        var buttonId = this.id;
-        var fileName = buttonId + ".html";
-
-        e.preventDefault();
-        $('#serviceDetailsPanel').load(fileName);
-
-    });
-</script>
