@@ -1,46 +1,5 @@
 $(document).ready(function () {
 
-    //--- Load All Results by default --------//
-    $('#searchResultsPanel').load('allresults.html');
-
-    //--- Menu Toggles ---//
-
-    $("#menu-toggle-left").click(function (e) {
-        e.preventDefault();
-        $("#content").toggleClass("toggled-left");
-        $("i").toggleClass('fa-chevron-right fa-chevron-left');
-    });
-
-    $("#menu-toggle-right").click(function (e) {
-        e.preventDefault();
-        $("#content").toggleClass("toggled-right");
-        $("i").toggleClass('fa-chevron-left fa-chevron-right');
-    });
-
-    //-- Load Search Results --//
-
-    $('.categoryTitle').click(function (e) {
-        var categoryHREF = $(this).attr('data');
-
-        e.preventDefault();
-        $('#searchResultsPanel').load(categoryHREF); //loads category results HTML page
-    });
-
-    //--- Add/Remove to pack
-    //$('a.add').click(function (e) {
-    $(document).on("click", ".add", function () {
-        //addToPack($(event.target), $(this));
-        addToPack($(this));
-        return false;
-    });
-
-    //--- Remove from pack and reactivate 'Add to pack' --//
-    $(document).on("click", ".delete", function () {
-        removeFromPack($(this));
-        return false;
-    });
-
-
     //--- supporting functions for Add/Remove to pack
     function getServiceTile(addBtn) {
         return addBtn.closest('.serviceTile');
@@ -130,20 +89,12 @@ $(document).ready(function () {
         removeBtn.remove();
     }
 
-    //--- Add all/Remove all to/from pack--//
+    function loadServiceDetailsPanel(buttonId) {
+        var fileName = buttonId + ".html";
+        $('#serviceDetailsPanel').load(fileName);
+    }
 
-    $('#addAll').click(function (e) {
-        addAllToPack();
-        e.preventDefault();
-    });
-
-    $('#removeAll').click(function (e) {
-        removeAllFromPack();
-        e.preventDefault();
-    });
-
-    //--- Open in New Tab --- //
-    $('#newTab').click(function () {
+    function openServiceDetailInNewTab() {
         var $url = $('#serviceHeader').data('url');
         var $win = window.open($url, '_blank');
         if ($win) {
@@ -153,6 +104,66 @@ $(document).ready(function () {
             //Browser has blocked it
             alert('Please allow popups for this website');
         }
+    }
+
+    //--- Load All Results by default --------//
+    $('#searchResultsPanel').load('allresults.html');
+
+    //--- Menu Toggles ---//
+
+    $("#menu-toggle-left").click(function (e) {
+        e.preventDefault();
+        $("#content").toggleClass("toggled-left");
+        $("i").toggleClass('fa-chevron-right fa-chevron-left');
+    });
+
+    $("#menu-toggle-right").click(function (e) {
+        e.preventDefault();
+        $("#content").toggleClass("toggled-right");
+        $("i").toggleClass('fa-chevron-left fa-chevron-right');
+    });
+
+    //-- Load Search Results --//
+
+    // loads category results HTML page
+    $('.categoryTitle').click(function (e) {
+        var categoryHREF = $(this).attr('data');
+        e.preventDefault();
+        $('#searchResultsPanel').load(categoryHREF);
+    });
+
+    //--- Add/Remove to pack
+    $(document).on("click", ".add", function () {
+        addToPack($(this));
+        return false;
+    });
+
+    //--- Remove from pack and reactivate 'Add to pack' --//
+    $(document).on("click", ".delete", function () {
+        removeFromPack($(this));
+        return false;
+    });
+
+    //--- Add all/Remove all to/from pack--//
+    $('#addAll').click(function (e) {
+        addAllToPack();
+        e.preventDefault();
+    });
+
+    $('#removeAll').click(function (e) {
+        removeAllFromPack();
+        e.preventDefault();
+    });
+    
+    //--- Loading Service Details ---//
+    $(document).on("click", ":button.servicePreview", function () {
+        loadServiceDetailsPanel(this.id);
+        e.preventDefault();
+    });
+
+    //--- Open in New Tab --- //
+    $('#newTab').click(function () {
+        openServiceDetailInNewTab();
     });
 
     //    //--- Animated Accordion for Right Sidebar ---//    
@@ -191,32 +202,4 @@ $(document).ready(function () {
             }
         };
     }
-
-    $('button').click(function (e) {
-
-        var buttonId = this.id;
-        var fileName = buttonId + ".html";
-
-        e.preventDefault();
-        $('#serviceDetailsPanel').load(fileName);
-
-    });
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
