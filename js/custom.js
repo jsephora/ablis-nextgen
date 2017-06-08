@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     $('.categoryTitle').click(function (e) {
         var categoryHREF = $(this).attr('data');
-        
+
         e.preventDefault();
         $('#searchResultsPanel').load(categoryHREF); //loads category results HTML page
     });
@@ -42,13 +42,11 @@ $(document).ready(function () {
 
 
     //--- supporting functions for Add/Remove to pack
-    function getServiceTile(addBtn)
-    {
+    function getServiceTile(addBtn) {
         return addBtn.closest('.serviceTile');
     }
 
-    function getServiceTileAddBtn(serviceTile)
-    {
+    function getServiceTileAddBtn(serviceTile) {
         return $(serviceTile).find('a.add');
     }
 
@@ -79,13 +77,11 @@ $(document).ready(function () {
     //    addLink.html($linkText);
     //}
 
-    function setServiceTileAddLinkText(addLink, text)
-    {
+    function setServiceTileAddLinkText(addLink, text) {
         addLink.html(text);
     }
 
-    function addAllToPack()
-    {
+    function addAllToPack() {
         // for each service tile, find its add link and title and construct the pack 
         var serviceTileArray = $('.serviceTile');
 
@@ -108,8 +104,7 @@ $(document).ready(function () {
         setServiceTileAddLinkText(addBtn, "Added");
     }
 
-    function removeAllFromPack()
-    {
+    function removeAllFromPack() {
         // for each service added to the Pack, find its delete button and then parent li tag, and remove it from the pack
         var removeBtnInArray = $('.sidebar-nav-right .delete');
 
@@ -135,63 +130,93 @@ $(document).ready(function () {
         removeBtn.remove();
     }
 
+    //--- Add all/Remove all to/from pack--//
 
-//    $('#showAlcohol').click(function (e) {
-//        e.preventDefault();
-//        $('#searchResultsPanel').load('alcohol.html');
-//    });
-//
-//    $('#showEmployment').click(function (e) {
-//        e.preventDefault();
-//        $('#searchResultsPanel').load('employment.html');
-//    });
-//
-//    $('#showAll').click(function (e) {
-//        e.preventDefault();
-//        $('#searchResultsPanel').load('allresults.html');
-//    });
-    
-    
-//--- Add all/Remove all to/from pack--//
-    //    var added = true;
-    
-    $('#addAll').click(function(e) {
+    $('#addAll').click(function (e) {
         addAllToPack();
-
-        //var $serviceName = $('.serviceTile').find('h3');
-        //var $title = $($serviceName).text();
-        //var delButton = "<button class='delete'>remove</button>";
-
-        //if (added) {
-        //e.preventDefault();
-        //$('ul.sidebar-nav-right').append('<li>' + $title + delButton + '</li>');
-        
-        //$(this).addClass('clicked');
-        //}
+        e.preventDefault();
     });
 
     $('#removeAll').click(function (e) {
         removeAllFromPack();
-    })
-    
-    //$('#addAll').click(function() {
-    //    added = false;
-    //});
-    
-//--- Remove from pack and reactivate 'Add all to pack' --//
-    //$(document).on("click", ".delete", function() {
-    //    $(this).parent('li').remove();
-    //    $(this).remove();
-    //    added = true;
-    //    $('#addAll').removeClass('clicked');
-    //});
+        e.preventDefault();
+    });
 
-    
-//--- Open in New Tab --- //
-//    $('#newTab').click(function(e) {
-//        
-//        $('#serviceDetailsPanel').load
-//    })
-    
-    
+    //--- Open in New Tab --- //
+    $('#newTab').click(function () {
+        var $url = $('#serviceHeader').data('url');
+        var $win = window.open($url, '_blank');
+        if ($win) {
+            //Browser has allowed it to be opened
+            $win.focus();
+        } else {
+            //Browser has blocked it
+            alert('Please allow popups for this website');
+        }
+    });
+
+    //    //--- Animated Accordion for Right Sidebar ---//    
+    //        var acc = document.getElementsByClassName("accordion");
+    //        var i;
+    //    
+    //        for (i = 0; i < acc.length; i++) {
+    //            acc[i].onclick = function () {
+    //                this.classList.toggle("active");
+    //                var panel = this.nextElementSibling;
+    //                if (panel.style.maxHeight) {
+    //                    panel.style.maxHeight = null;
+    //                } else {
+    //                    panel.style.maxHeight = panel.scrollHeight + "px";
+    //                }
+    //            };
+    //        }
+
+
+    //--- Standard Accordion for Right Sidebar ---//  
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function () {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        };
+    }
+
+    $('button').click(function (e) {
+
+        var buttonId = this.id;
+        var fileName = buttonId + ".html";
+
+        e.preventDefault();
+        $('#serviceDetailsPanel').load(fileName);
+
+    });
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

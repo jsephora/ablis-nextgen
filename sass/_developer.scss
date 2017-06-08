@@ -39,12 +39,18 @@
 }
 
 .clicked {
-    color: $gray-light !important;
+    color: $grey-light !important;
     text-decoration: none !important;
     &:hover {
         background-color: none !important;
         background: none !important;
-        color: $gray-light !important;
+        color: $grey-light !important;
         cursor: not-allowed;
     }
 }
+
+.icon {
+    margin-right: 7px;
+    padding-bottom: 3px;
+}
+

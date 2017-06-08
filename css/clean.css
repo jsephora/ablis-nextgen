@@ -190,12 +190,13 @@ body {
 
 /* Sidebar Styles */
 .sidebar-nav-right {
-  position: absolute;
-  top: 0;
+  position: relative;
   width: 300px;
   margin: 0;
   padding: 1rem 0;
-  list-style: none; }
+  list-style: none;
+  min-height: 100%;
+  height: 100%; }
 
 .sidebar-nav-right li {
   text-indent: 0;
@@ -204,6 +205,7 @@ body {
   margin-bottom: 20px;
   display: inline-flex;
   padding-right: 20px;
+  padding-left: 20px;
   font-weight: 500;
   justify-content: flex-end; }
 
@@ -256,6 +258,64 @@ button.delete {
 .lic-name {
   width: 80%; }
 
+#criteria {
+  margin-bottom: 0px; }
+
+button.accordion {
+  background-color: #e4e5e5;
+  padding: 20px;
+  margin-bottom: 1px;
+  color: #545454;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-out; }
+  button.accordion:hover {
+    background-color: #cccccc; }
+  button.accordion:after {
+    font-family: "FontAwesome";
+    content: '\f078';
+    /*-- fa-chevron-down --*/
+    font-size: 13px;
+    float: right;
+    margin-left: 5px; }
+
+button.accordion.active {
+  background-color: #cccccc; }
+  button.accordion.active:after {
+    content: "\f077";
+    /*-- fa-chevron-up --*/ }
+
+.panel {
+  padding: 0px;
+  background-color: white; }
+  .panel .subby {
+    background-color: #f7f7f7;
+    padding: 14px;
+    font-size: 14px; }
+    .panel .subby a {
+      text-decoration: underline;
+      padding: 3px; }
+      .panel .subby a:hover {
+        background: black;
+        color: white; }
+
+.dom {
+  color: #254f90;
+  margin: 0;
+  padding: 20px 20px 0 20px; }
+
+.sub {
+  color: #000;
+  font-weight: 400;
+  padding: 0 20px;
+  margin-bottom: 0px; }
+  .sub:last-child {
+    margin-bottom: 36px; }
+
 @media (min-width: 768px) {
   #content {
     padding-left: 0; }
@@ -264,8 +324,7 @@ button.delete {
   #sidebar-wrapper-right {
     width: 0; }
   #content.toggled-right #sidebar-wrapper-right {
-    width: 300px;
-    padding: 20px; }
+    width: 300px; }
   #page-content-wrapper {
     padding: 20px;
     position: relative; }
@@ -1299,7 +1358,9 @@ button {
   margin-bottom: 1rem; }
   #results-controlbar a, #details-controlbar a {
     text-decoration: underline;
-    margin-right: 12px; }
+    margin-right: 12px;
+    margin-left: 20px;
+    padding: 0 4px; }
     #results-controlbar a:hover, #details-controlbar a:hover {
       color: white;
       background-color: black;
@@ -1438,3 +1499,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
     background: none !important;
     color: #cccccc !important;
     cursor: not-allowed; }
+
+.icon {
+  margin-right: 7px;
+  padding-bottom: 3px; }

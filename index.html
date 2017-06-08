@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -87,9 +87,8 @@
             <a href="#menu-toggle-left" class="sidebar-toggle" id="menu-toggle-left" title="Filter by category"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
 
             <div id="results-controlbar">
-                <a href="#!" id="refineBtn">Refine</a>
+                <a href="#!" id="refineBtn"><img class="icon" src="img/icon-refine.png">Refine</a>
                 <a href="#!" id="addAll">Add all to pack</a>
-                <a href="#!" id="removeAll">Remove all from pack</a>
             </div>
 
             <div id="searchResultsPanel">
@@ -105,15 +104,15 @@
             <a href="#menu-toggle-right" class="sidebar-toggle" id="menu-toggle-right" title="Filter by category"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
             <div id="details-controlbar">
-                <a href="#!" id="newTab">Open in a new tab</a>
-                <a href="#!" id="print">Print</a>
+                <a href="#!" id="newTab"><img class="icon" src="img/icon-newtab.png">Open in a new tab</a>
+                <a href="#!" id="print"><img class="icon" src="img/icon-print.png">Print</a>
             </div>
 
             <!-- Refinement overlay -->
             <div class="overlay overlay-simplegenie">
                 <button type="button" class="overlay-close">Close</button>
                 <form class="col-sm-8">
-                   <h4><span>Refine</span> EMPLOYING STAFF</h4>
+                    <h4><span>Refine</span> EMPLOYING STAFF</h4>
                     <fieldset class="longfield">
                         <legend class="with-tooltip">Will you employ staff or contractors?
                         </legend>
@@ -220,10 +219,34 @@
 
         <!-- Sidebar Right -->
         <div id="sidebar-wrapper-right">
+            <div id="criteria">
+                <button class="accordion">Your details</button>
+                <div class="panel">
+                    <p class="dom">Business type:</p>
+                    <p class="sub">Cafe operation</p>
 
-            <ul class="sidebar-nav-right">
-                <h5>Your pack</h5>
-            </ul>
+                    <p class="dom">Location:</p>
+                    <p class="sub">3350, Ballarat East, VIC</p>
+
+                    <p class="dom">Your council:</p>
+                    <p class="sub">Ballarat City Council</p>
+                </div>
+            </div>
+
+            <div id="pack">
+                <button class="accordion">Your pack</button>
+                <div class="panel">
+                    <div class="subby">
+                        <a href="#!" id="export"><img class="icon" src="img/icon-export.png">Export</a>
+                        <a href="#!" id="removeAll">Remove all</a>
+                    </div>
+                    <ul class="sidebar-nav-right">
+
+                        <!-- your pack populates in here -->
+
+                    </ul>
+                </div>
+            </div>
         </div>
         <!-- /#sidebar-wrapper -->
 
