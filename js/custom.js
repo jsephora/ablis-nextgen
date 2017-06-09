@@ -1,8 +1,12 @@
 $(document).ready(function () {
 
     //--- supporting functions for Add/Remove to pack
-    function getServiceTile(addBtn) {
-        return addBtn.closest('.serviceTile');
+    function getServiceTile(buttonOrLink) {
+        return buttonOrLink.closest('.serviceTile');
+    }
+
+    function getServiceTileRemoveBtn(buttonId) {
+        return $('button[id=' + buttonId + ']');
     }
 
     function getServiceTileAddBtn(serviceTile) {
@@ -19,8 +23,8 @@ $(document).ready(function () {
         return addBtn.closest('.serviceTile').find('button').attr('id');
     }
 
-    function getServiceTileAddLink(btnAddId) {
-        return $('button[id=' + btnAddId + ']').closest('.serviceTile').find('a.add');
+    function getServiceTileAddLink(buttonId) {
+        return $('button[id=' + buttonId + ']').closest('.serviceTile').find('a.add');
     }
 
     function addItemToPack(addBtn) {
@@ -106,21 +110,61 @@ $(document).ready(function () {
         }
     }
 
+    //--- Employment.html - Refine - Toggle whether to show "Application for WorkSafe Insurance"
+    function adjustCategoryTitleText(adjustBy)
+    {
+        if (adjustBy === -1) {
+            //substract one
+            // i.e. Employing Staff (7) -> Employing Staff (6), and All Results (39) -> All Results (38)
+            $('#showEmployment').html("Employing Staff (6)");
+            $('#showAll').html("All Results (38)");
+            $('#mainheadingresultscount').html("<strong>38 Results</strong> found for your business activities and location.");
+            $('.sidebar-nav-left h5').html("Categories (38 results total)");
+        } else {
+            //add one
+            $('#showEmployment').html("Employing Staff (7)");
+            $('#showAll').html("All Results (39)");
+            $('#mainheadingresultscount').html("<strong>39 Results</strong> found for your business activities and location.");
+            $('.sidebar-nav-left h5').html("Categories (39 results total)");
+        }
+    }
+    function toggleServiceApplicationForWorksafeInsurance(showItem) {
+        var buttonId = 24633;
+        var serviceTile = getServiceTile(getServiceTileRemoveBtn(buttonId));
+
+        if (showItem === true) {
+            // show the item if hidden
+            $(serviceTile).removeClass("hidden");
+            // adjust the counters back up by 1
+            adjustCategoryTitleText(1);
+        } else {
+            // hide the item
+            $(serviceTile).addClass("hidden");
+            // subtract 1 from the count for Employment
+            adjustCategoryTitleText(-1);
+        }
+    }
+    $(document).on("click", "#optionSelfInsurerYes", function () { toggleServiceApplicationForWorksafeInsurance(true); });
+    $(document).on("click", "#optionSelfInsurerNo", function () { toggleServiceApplicationForWorksafeInsurance(false); });
+
     //--- Load All Results by default --------//
     $('#searchResultsPanel').load('allresults.html');
+
+    //--- Load and hide dedicated Refine html -------//
+    $('#employmentOverlayPanel').load('employmentoverlay.html');
 
     //--- Menu Toggles ---//
 
     $("#menu-toggle-left").click(function (e) {
         e.preventDefault();
         $("#content").toggleClass("toggled-left");
-        $("i").toggleClass('fa-chevron-right fa-chevron-left');
+        $('#menu-toggle-left i').toggleClass('fa-chevron-right fa-chevron-left');
     });
 
     $("#menu-toggle-right").click(function (e) {
         e.preventDefault();
         $("#content").toggleClass("toggled-right");
-        $("i").toggleClass('fa-chevron-left fa-chevron-right');
+        $("#menu-toggle-right i").toggleClass('fa-chevron-left fa-chevron-right');
     });
 
     //-- Load Search Results --//
@@ -156,7 +200,7 @@ $(document).ready(function () {
     });
     
     //--- Loading Service Details ---//
-    $(document).on("click", ":button.servicePreview", function () {
+    $(document).on("click", ":button.servicePreview", function (e) {
         loadServiceDetailsPanel(this.id);
         e.preventDefault();
     });
