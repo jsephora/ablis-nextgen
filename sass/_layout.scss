@@ -15,20 +15,28 @@
     }
 }
 .lead {
-    
+    color: $greytext;    
 }
+.toolbar {
+    background: $lightest-grey;
+    border-bottom: 1px solid $table-lines;
+    height: 40px;
+}
+
 
 // Search Results
 #searchResultsPanel {
-    padding: 1rem;
+    margin-top: 1rem;
+    padding: 24px;
     h2 {
         color: $greytext;
-        font-size: 168%;
+        font-size: 130%;
         font-weight: 400;
-        margin-bottom: 1.250rem;
+        margin-bottom: 2rem;
         line-height: $line-height;
         float: left;
         clear: both;
+        margin-left: 12px;
         .resultCount {
             font-size: 60%;
             font-weight: 100;
@@ -53,8 +61,8 @@
         border: 0;
         padding: 0 12px;
         &:focus, &:active {
-            margin: -16px -16px 0 -16px;
-            padding: 16px 28px 0 28px;
+            margin: -20px -24px 0 -20px;
+            padding: 20px 32px 0 32px;
             outline: none;
             background-color: aliceblue;
         }
@@ -90,25 +98,6 @@
         }
     }
 }
-
-#results-controlbar, #details-controlbar {
-    float: right;
-    clear: both;
-    padding: 0.5rem 0;
-    margin-bottom: 1rem;
-    a {
-        text-decoration: underline;
-        margin-right: 12px;
-        margin-left: 20px;
-        padding: 0 4px;
-        &:hover {
-            color: white;
-            background-color: black;
-            text-decoration: none;
-        }
-    }
-}
-
 
 // Service Details Section
 #serviceDetailsPanel {
@@ -172,7 +161,7 @@ WebKit inertia scrolling is being added here for any present/future devices that
 .middle-left::-webkit-scrollbar,
 .middle-right::-webkit-scrollbar,
 #sidebar-wrapper-right::-webkit-scrollbar {
-    display: none;
+//    display: none;
 }
 
 .middle-left, .middle-right {

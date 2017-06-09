@@ -130,10 +130,10 @@ button.delete {
 }
 
 button.accordion {
-    background-color: $grey-bg;
+    background-color: $ablis-blue;
     padding: 20px;
     margin-bottom: 1px;
-    color: $greytext;
+    color: white;
     font-weight: 600;
     cursor: pointer;
     width: 100%;
@@ -142,7 +142,7 @@ button.accordion {
     outline: none;
     transition: 0.4s ease-out;
     &:hover {
-        background-color: $grey-light;
+        background-color: $ablis-blue-hover;
     }
     &:after {
         font-family: "FontAwesome";
@@ -154,7 +154,7 @@ button.accordion {
 }
 
 button.accordion.active {
-    background-color: $grey-light;
+    background-color: $ablis-blue;
     &:after {
         content: "\f077"; /*-- fa-chevron-up --*/
     }
