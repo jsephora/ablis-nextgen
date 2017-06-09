@@ -41,7 +41,7 @@
             <div class="mainheading">
                 <h1>ABLIS Next Gen Search Results</h1>
             </div>
-            <p class="lead"><strong>39 Results</strong> found for your business activities and location.</p>
+            <p id="mainheadingresultscount" class="lead"><strong>39 Results</strong> found for your business activities and location.</p>
         </div>
     </div>
 
@@ -114,104 +114,9 @@
                 </div>
             </div>
 
-
             <!-- Refinement overlay -->
-            <div class="overlay overlay-simplegenie">
-                <button type="button" class="overlay-close">Close</button>
-                <form class="col-sm-8">
-                    <h4><span>Refine</span> EMPLOYING STAFF</h4>
-                    <fieldset class="longfield">
-                        <legend class="with-tooltip">Will you employ staff or contractors?
-                        </legend>
-
-                        <div class="radio-toggle">
-                            <label class="label-left" for="1">
-            <input type="radio" name="question1" rel="#slidingDiv" id="1" value="Yes">
-            <span>Yes</span></label>
-
-                            <label class="label-right" for="0">
-            <input type="radio" name="question1" id="0" value="No"><span>No</span></label>
-                        </div>
-
-                        <div id="slidingDiv">
-                            <p class="question">My business unit will:</p>
-                            <p class="instruction">(Please select as many that apply)</p>
-                            <div class="custom-controls">
-                                <p>
-                                    <input type="checkbox" id="qa1">
-                                    <label for="qa1">Have an annual staff payroll exceeding $750,000</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="qa2">
-                                    <label for="qa2">Offer benefits to employees beyond their normal wages (e.g. bonuses, fringe benefits)</label>
-                                </p>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="longfield">
-                        <legend class="with-tooltip">Will you act as a self-insurer for Workers Compensation?</legend>
-
-                        <div class="radio-toggle">
-                            <label class="label-left" for="3">
-            <input type="radio" name="question2" rel="#slidingDiv2" id="3" value="Yes">
-            <span>Yes</span></label>
-
-                            <label class="label-right" for="2">
-            <input type="radio" name="question2" id="2" value="No"><span>No</span></label>
-                        </div>
-
-                        <div id="slidingDiv2">
-                            <p class="question">My business will employ staff from:</p>
-                            <p class="instruction">(Please select as many that apply)</p>
-                            <div class="custom-controls">
-                                <p>
-                                    <input type="checkbox" id="australia" value="Australia only">
-                                    <label for="australia">Australia</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="nz" value="New Zealand">
-                                    <label for="nz">New Zealand</label>
-                                </p>
-                                <p>
-                                    <input type="checkbox" id="overseas" value="overseas">
-                                    <label for="overseas">Other countries</label>
-                                </p>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="longfield">
-                        <legend class="with-tooltip">Do you want information on workplace health and safety?
-                            <!--                                        <a class="cd-btn help" href="#"><span>Help - Workplace health and safety</span></a>-->
-                        </legend>
-
-                        <div class="radio-toggle">
-                            <label class="label-left" for="5">
-            <input type="radio" name="question3" id="5" value="Yes">
-            <span>Yes</span></label>
-
-                            <label class="label-right" for="4">
-            <input type="radio" name="question3" id="4" value="No"><span>No</span></label>
-                        </div>
-
-
-                    </fieldset>
-
-                    <fieldset class="longfield">
-                        <legend class="with-tooltip">Will your business provide training to staff or seek assistance with their training? Will your business provide training to staff or seek assistance with their training?</legend>
-
-                        <div class="radio-toggle">
-                            <label class="label-left" for="7">
-            <input type="radio" name="question4" id="7" value="Yes">
-            <span>Yes</span></label>
-
-                            <label class="label-right" for="6">
-            <input type="radio" name="question4" id="6" value="No"><span>No</span></label>
-                        </div>
-
-                    </fieldset>
-                </form>
+            <div id="employmentOverlayPanel">
+                <!-- Refinement details go here-->
             </div>
 
 
@@ -275,7 +180,14 @@
     <!-- Custom Javascript -->
     <script src="js/custom.js"></script>
     <script src="js/classie.js"></script>
-    <script src="js/demo1.js"></script>
+    <!--<script src="js/demo1.js"></script>-->
+    <script>
+        //wait for document.ready to fire
+        $(function () {
+            //then load the JavaScript file
+            $.getScript('js/demo1.js');
+        });
+    </script>
 </body>
 
 </html>
