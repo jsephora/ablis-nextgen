@@ -7,16 +7,16 @@
 /* Toggle Styles */
 
 #content.toggled-right {
-    padding-right: 300px;
+    padding-right: 360px;
 }
 
 #sidebar-wrapper-right {
     z-index: 1000;
     position: fixed;
-    right: 300px;
+    right: 360px;
     width: 0;
     height: 100%;
-    margin-right: -300px;
+    margin-right: -360px;
     overflow-y: auto;
     background: white;
     border-left: 1px solid $grey-bg;
@@ -27,7 +27,7 @@
 }
 
 #content.toggled-right #sidebar-wrapper-right {
-    width: 300px;
+    width: 360px;
 }
 
 #page-content-wrapper {
@@ -38,7 +38,7 @@
 
 #content.toggled-right #page-content-wrapper {
     position: absolute;
-    margin-left: -300px;
+    margin-left: -360px;
 }
 
 
@@ -46,7 +46,7 @@
 
 .sidebar-nav-right {
     position: relative;
-    width: 300px;
+    width: 360px;
     margin: 0;
     padding: 1rem 0;
     list-style: none;
@@ -56,14 +56,13 @@
 
 .sidebar-nav-right li {
     text-indent: 0;
-    line-height: 20px;
     color: $dark-blue;
     margin-bottom: 20px;
-    display: inline-flex;
+    display: inline-block;
     padding-right: 20px;
     padding-left: 20px;
     font-weight: 500;
-    justify-content: flex-end;
+    width: 80%;
 }
 
 .sidebar-nav-right li a {
@@ -109,12 +108,13 @@ button.delete {
     background: transparent;
     border: 0;
     display: inline;
-    position: relative;
-    right: 0;
-    top: 0;
-    line-height: 12px;
-    height: 20px;
-    text-align: right;
+    position: absolute;
+    right: 16px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    padding: 3px 0;
     &:hover {
         background: #000;
         color: white;
@@ -140,7 +140,10 @@ button.accordion {
     text-align: left;
     border: none;
     outline: none;
-    transition: 0.4s ease-out;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     &:hover {
         background-color: $ablis-blue-hover;
     }
@@ -155,6 +158,10 @@ button.accordion {
 
 button.accordion.active {
     background-color: $ablis-blue;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     &:after {
         content: "\f077"; /*-- fa-chevron-up --*/
     }
@@ -163,13 +170,19 @@ button.accordion.active {
 .panel {
     padding: 0px;
     background-color: white;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 //    max-height: 0;
 //    overflow: hidden;
 //    transition: max-height 0.2s ease-out;
     .subby {
         background-color: $lightest-grey;
-        padding: 14px;
+        padding-top: 12px;
         font-size: 14px;
+        height: 52px;
+        display: flex;
         a {
             text-decoration: underline;
             padding: 3px;
@@ -179,6 +192,10 @@ button.accordion.active {
             }
         }
     }
+}
+#removeAll {
+    position: absolute;
+    right: 16px;
 }
 .dom {
     color: $ablis-blue;
@@ -201,13 +218,13 @@ button.accordion.active {
         padding-left: 0;
     }
     #content.toggled-right {
-        padding-right: 300px;
+        padding-right: 360px;
     }
     #sidebar-wrapper-right {
         width: 0;
     }
     #content.toggled-right #sidebar-wrapper-right {
-        width: 300px;
+        width: 360px;
     }
     #page-content-wrapper {
         padding: 20px;

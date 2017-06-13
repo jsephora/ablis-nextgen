@@ -131,36 +131,55 @@
 
         <!-- Sidebar Right -->
         <div id="sidebar-wrapper-right">
-            <div id="criteria">
-                <button class="accordion">Your details</button>
-                <div class="panel">
-                    <p class="dom">Business type:</p>
-                    <p class="sub">Cafe operation</p>
 
-                    <p class="dom">Location:</p>
-                    <p class="sub">3350, Ballarat East, VIC</p>
+            <section class="ac-container">
+                <div class="ac-button">
+                    <input id="ac-1" name="accordion-1" type="checkbox" />
+                    <label for="ac-1">Your details</label>
+                    <article class="ac-small panel">
+                        <p class="dom">Business type:</p>
+                        <p class="sub">Cafe operation</p>
 
-                    <p class="dom">Your council:</p>
-                    <p class="sub">Ballarat City Council</p>
+                        <p class="dom">Location:</p>
+                        <p class="sub">3350, Ballarat East, VIC</p>
+
+                        <p class="dom">Your council:</p>
+                        <p class="sub">Ballarat City Council</p>
+                    </article>
                 </div>
-            </div>
+                <div class="ac-button">
+                    <input id="ac-2" name="accordion-1" type="checkbox" />
+                    <label for="ac-2">Your pack</label>
+                    <article class="ac-medium panel">
+                        <div class="subby">
 
-            <div id="pack">
-                <button class="accordion">Your pack</button>
-                <div class="panel">
-                    <div class="subby">
-                        <a href="#!" id="export"><img class="icon" src="img/icon-export.png">Export</a>
-                        <a href="#!" id="removeAll">Remove all</a>
-                    </div>
-                    <ul class="sidebar-nav-right">
+                            <div class="dropdown">
+                                <a href="#exportMenu" id="export" class="account"><img class="icon" src="img/icon-export.png">Export to</a>
 
-                        <!-- your pack populates in here -->
+                                <div id="exportSelect" class="submenu">
+                                    <ul class="root">
+                                        <li><a id="exportEmail" href="#Dashboard"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a></li>
+                                        <li><a id="exportPDF" href="#Profile"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</a></li>
+                                        <li><a id="exportPrint" href="#settings"><i class="fa fa-print" aria-hidden="true"></i> Print</a></li>
+                                        <li><a id="exportWord" href="#feedback"><i class="fa fa-file-word-o" aria-hidden="true"></i> Word Doc</a></li>
+                                    </ul>
+                                </div>
 
-                    </ul>
+                            </div>
+
+                            <a href="#!" id="removeAll">Remove all</a>
+                        </div>
+                        <ul class="sidebar-nav-right">
+
+                            <!-- your pack populates in here -->
+
+                        </ul>
+                    </article>
                 </div>
-            </div>
+            </section>
         </div>
         <!-- /#sidebar-wrapper -->
+
 
     </div>
     <!-- /main content div -->
@@ -168,7 +187,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!--    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
@@ -183,11 +201,46 @@
     <!--<script src="js/demo1.js"></script>-->
     <script>
         //wait for document.ready to fire
-        $(function () {
+        $(function() {
             //then load the JavaScript file
             $.getScript('js/demo1.js');
         });
     </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".account").click(function() {
+                var X = $(this).attr('id');
+                if (X == 1) {
+                    $(".submenu").hide();
+                    $(this).attr('id', '0');
+                } else {
+                    $(".submenu").show();
+                    $(this).attr('id', '1');
+                }
+
+            });
+
+            //Mouse click on sub menu
+            $(".submenu").mouseup(function() {
+                return false
+            });
+
+            //Mouse click on my account link
+            $(".account").mouseup(function() {
+                return false
+            });
+
+
+            //Document Click
+            $(document).mouseup(function() {
+                $(".submenu").hide();
+                $(".account").attr('id', '');
+            });
+        });
+    </script>
+
 </body>
 
 </html>

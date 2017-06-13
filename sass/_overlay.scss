@@ -22,7 +22,9 @@
         display: inline-flex;
         margin-bottom: 30px;
     }
-    .custom-controls p:focus, .custom-controls p > input[type=checkbox]:focus ~ label, .custom-controls p > input[type=checkbox] ~ label:focus {
+    .custom-controls p:focus,
+    .custom-controls p>input[type=checkbox]:focus~label,
+    .custom-controls p>input[type=checkbox]~label:focus {
         outline: 0;
     }
 }
@@ -146,3 +148,27 @@ legend.with-tooltip {
     font-weight: 400;
 }
 
+.serviceTile.hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+//    transition: visibility 1s, opacity 0.5s linear, height 1s linear, padding 0.5s linear, margin 0.5s linear;
+    transition: all 1.5s ease;
+    overflow: hidden;
+}
+
+.serviceTile {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+//    transition: visibility 1s ease-in, opacity 0.5s ease-in, height 1s ease-in, padding 1s ease-in, margin 1s ease-in;
+    transition: all 1.5s ease;
+}
+
+//.serviceTile.hidden {
+//	visibility: collapse;
+//    visibility: transform 1s, visibility 0s 1s;
+////    display: none;
+//}

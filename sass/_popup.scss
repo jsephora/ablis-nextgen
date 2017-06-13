@@ -1,0 +1,48 @@
+// Popup menu for 'export as'
+// --------------------------
+.dropdown {
+    //    margin: 3px -22px 0 0;
+    width: 50%;
+    //    position: relative;
+    height: 28px;
+    text-align: left;
+}
+
+.submenu {
+    background: #fff;
+    position: absolute;
+    top: -12px;
+    left: -20px;
+    z-index: 100;
+    width: 135px;
+    display: none;
+    margin-left: 20px;
+    padding: 40px 0 5px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+#exportSelect li a {
+    display: inline-block;
+    padding: 12px 12px 12px 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.account {
+    position: absolute;
+    left: 16px;
+    z-index: 110;
+    display: block;
+    height: 28px;
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+.root {
+    list-style: none;
+    margin: 0px 16px 0px;
+    padding: 13px 0 0 0px;
+    border-top: 1px solid #dedede;
+}
