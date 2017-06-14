@@ -48,8 +48,6 @@ body {
     top: 9px;
     left: 11px;
     -webkit-transition: all 300ms ease 0s;
-    -moz-transition: all 300ms ease 0s;
-    -o-transition: all 300ms ease 0s;
     transition: all 300ms ease 0s; }
     #menu-toggle-left i:hover {
       left: 15px; }
@@ -61,8 +59,6 @@ body {
     top: 9px;
     right: 10px;
     -webkit-transition: all 300ms ease 0s;
-    -moz-transition: all 300ms ease 0s;
-    -o-transition: all 300ms ease 0s;
     transition: all 300ms ease 0s; }
     #menu-toggle-right i:hover {
       right: 15px; }
@@ -90,8 +86,6 @@ body {
 #content {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
 #content.toggled-left {
@@ -105,8 +99,6 @@ body {
   margin-left: -300px;
   background-color: #254f90;
   -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
 #content.toggled-left #sidebar-wrapper-left {
@@ -210,8 +202,6 @@ body {
   background: white;
   border-left: 1px solid #e4e5e5;
   -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
 #content.toggled-right #sidebar-wrapper-right {
@@ -285,8 +275,6 @@ button.delete {
   position: absolute;
   right: 16px;
   -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   padding: 3px 0; }
   button.delete:hover {
@@ -311,8 +299,6 @@ button.accordion {
   border: none;
   outline: none;
   -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   button.accordion:hover {
     background-color: #1d417a; }
@@ -327,8 +313,6 @@ button.accordion {
 button.accordion.active {
   background-color: #254f90;
   -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   button.accordion.active:after {
     content: "\f077";
@@ -338,14 +322,14 @@ button.accordion.active {
   padding: 0px;
   background-color: white;
   -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .panel .subby {
     background-color: #f7f7f7;
     padding-top: 12px;
     font-size: 14px;
     height: 52px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     .panel .subby a {
       text-decoration: underline;
@@ -405,6 +389,8 @@ button.accordion.active {
       font-weight: 100;
       font-size: 90%; }
   .overlay .radio-toggle {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     margin-bottom: 30px; }
   .overlay .custom-controls p:focus,
@@ -433,14 +419,19 @@ button.accordion.active {
   -webkit-transform: translateY(60%) scale(0);
   transform: translateY(60%) scale(0);
   -webkit-transition: -webkit-transform 0.4s, visibility 0s 0.4s;
-  transition: transform 0.4s, visibility 0s 0.4s; }
+  -webkit-transition: visibility 0s 0.4s, -webkit-transform 0.4s;
+  transition: visibility 0s 0.4s, -webkit-transform 0.4s;
+  transition: transform 0.4s, visibility 0s 0.4s;
+  transition: transform 0.4s, visibility 0s 0.4s, -webkit-transform 0.4s; }
 
 .overlay-simplegenie.open {
   visibility: visible;
   -webkit-transform: translateY(0%) scale(1);
   transform: translateY(0%) scale(1);
   -webkit-transition: -webkit-transform 0.4s;
-  transition: transform 0.4s; }
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s; }
 
 @media screen and (max-height: 30.5em) {
   .overlay label {
@@ -478,19 +469,20 @@ legend.with-tooltip {
   height: 0;
   padding: 0;
   margin: 0;
-  transition: all 1.5s ease;
+  -webkit-transition: all 1.5s linear;
+  transition: all 1.5s linear;
   overflow: hidden; }
 
 .serviceTile {
   visibility: visible;
   opacity: 1;
   height: auto;
-  transition: all 1.5s ease; }
+  -webkit-transition: all 1.5s linear;
+  transition: all 1.5s linear; }
 
 .btn {
   background-color: white;
   border: 1px solid #367ab3;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   color: #367ab3;
   cursor: pointer;
@@ -518,7 +510,6 @@ legend.with-tooltip {
   background: #000000;
   border: 1px solid #000000;
   color: white;
-  -webkit-box-shadow: 0 0 2px 0 rgba(47, 45, 43, 0.5);
   box-shadow: 0 0 2px 0 rgba(47, 45, 43, 0.75); }
 
 /* The default button is more visually distinctive and should only appear once on the page */
@@ -560,7 +551,6 @@ fieldset[disabled] .btn {
   background: white;
   color: #656565;
   cursor: not-allowed;
-  -webkit-box-shadow: none;
   box-shadow: none;
   pointer-events: none; }
 
@@ -573,7 +563,6 @@ select[disabled]:active {
   background: white;
   border: 1px solid #B0B0B0;
   color: #656565;
-  -webkit-box-shadow: none;
   box-shadow: none; }
 
 .btn-small {
@@ -672,7 +661,6 @@ textarea:active,
 select:hover,
 select:focus,
 select:active {
-  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2); }
 
 input:focus, input:active,
@@ -690,14 +678,12 @@ select[disabled]:hover,
 select[disabled]:focus,
 select[disabled]:active {
   background-color: #efebe7;
-  -webkit-box-shadow: none;
   box-shadow: none; }
 
 /* Prevent square behind circle */
 input[type=radio]:hover,
 input[type=radio]:focus,
 input[type=radio]:active {
-  -webkit-box-shadow: none;
   box-shadow: none; }
 
 input,
@@ -718,7 +704,6 @@ input[type=url],
 input[type=search],
 textarea,
 select {
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   color: #666666;
   border: 1px solid #BBBBBB !important;
@@ -805,6 +790,7 @@ input[type=file] {
       padding-left: 31px;
       height: 100%;
       color: #fff;
+      background: url(../img/upload.png) no-repeat 5px center, -webkit-linear-gradient(top, #4f8fe6 0%, #367ab3 100%);
       background: url(../img/upload.png) no-repeat 5px center, linear-gradient(to bottom, #4f8fe6 0%, #367ab3 100%);
       display: inline-block; }
   .custom-controls input[type=file].compact + label span {
@@ -815,7 +801,6 @@ input[type=file] {
   .custom-controls input[type=file] + label:hover,
   .custom-controls input[type=file].has-focus + label {
     background-color: #fff79b;
-    -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
     border-color: #666; }
     .custom-controls input[type=file]:focus + label strong,
@@ -918,12 +903,10 @@ input[type=file] {
   overflow: visible; }
   .radio-toggle label.label-left,
   .radio-toggle label.label-left span {
-    -webkit-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
     border-right: 0; }
   .radio-toggle label.label-right,
   .radio-toggle label.label-right span {
-    -webkit-border-radius: 0 4px 4px 0;
     border-radius: 0 4px 4px 0; }
   .radio-toggle label.label-middle {
     border-left: 1px solid #D0D0D0;
@@ -946,14 +929,11 @@ input[type=file] {
 
 .radio-toggle input:focus + span {
   background-color: #fff79b;
-  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
   padding: 9px 0;
   border: 1px solid #02bfe7; }
 
 .radio-toggle input:checked + span {
-  -webkit-box-shadow: inset 0px 1px 2px 2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0px 1px 2px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0px 1px 2px 2px rgba(0, 0, 0, 0.1);
   background: #3679b3;
   color: #FFFFFF;
@@ -961,11 +941,9 @@ input[type=file] {
 
 .radio-toggle input:checked:focus + span {
   background-color: #000000;
-  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2); }
 
 .radio-toggle input + span:hover {
-  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2); }
 
 /* Stacked radio-toggle control */
@@ -1231,8 +1209,6 @@ div.radio-toggle.stacked.full-width label {
       color: #444444;
       padding: 9px 5px 9px 55px;
       min-height: 27px;
-      -moz-transition: color 1s ease;
-      -o-transition: color 1s ease;
       -webkit-transition: color 1s ease;
       transition: color 1s ease; }
     .custom-controls p > input[type="checkbox"]:hover ~ label,
@@ -1452,8 +1428,12 @@ button {
 /*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
 .top {
   display: block;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: white;
   border-bottom: 1px solid #e4e5e5;
   font-size: 3rem;
@@ -1464,6 +1444,8 @@ button {
 
 /*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
 #content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   height: calc(100vh - 230px);
@@ -1486,11 +1468,12 @@ WebKit inertia scrolling is being added here for any present/future devices that
 
 /*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
 .middle-left, .middle-right {
-  flex: 1; }
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
 
 .middle-right {
-  border-left: 1px solid #e4e5e5;
-  min-width: 50%; }
+  border-left: 1px solid #e4e5e5; }
 
 .middle-left {
   max-width: 640px; }
@@ -1526,9 +1509,6 @@ WebKit inertia scrolling is being added here for any present/future devices that
       line-height: 1.25; } }
 
 .box {
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
   border-radius: 8px; }
 
 #searchTerms {
@@ -1618,16 +1598,10 @@ WebKit inertia scrolling is being added here for any present/future devices that
   position: relative;
   z-index: 10;
   -webkit-transition: height 0.5s ease-in-out;
-  -moz-transition: height 0.5s ease-in-out;
-  -o-transition: height 0.5s ease-in-out;
-  -ms-transition: height 0.5s ease-in-out;
   transition: height 0.5s ease-in-out; }
 
 .ac-container input:checked ~ article {
   -webkit-transition: height 0.5s ease-in-out;
-  -moz-transition: height 0.5s ease-in-out;
-  -o-transition: height 0.5s ease-in-out;
-  -ms-transition: height 0.5s ease-in-out;
   transition: height 0.5s ease-in-out; }
 
 .ac-container input:checked ~ article.ac-small {
