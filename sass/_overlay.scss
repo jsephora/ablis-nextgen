@@ -155,7 +155,7 @@ legend.with-tooltip {
     padding: 0;
     margin: 0;
 //    transition: visibility 1s, opacity 0.5s linear, height 1s linear, padding 0.5s linear, margin 0.5s linear;
-    transition: all 1.5s ease;
+    transition: all 1.5s linear;
     overflow: hidden;
 }
 
@@ -164,7 +164,7 @@ legend.with-tooltip {
     opacity: 1;
     height: auto;
 //    transition: visibility 1s ease-in, opacity 0.5s ease-in, height 1s ease-in, padding 1s ease-in, margin 1s ease-in;
-    transition: all 1.5s ease;
+    transition: all 1.5s linear;
 }
 
 //.serviceTile.hidden {
